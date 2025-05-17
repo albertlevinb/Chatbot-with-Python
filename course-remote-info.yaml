@@ -1,0 +1,60 @@
+hyperskill_project:
+  id: 97
+  ide_files: https://hyperskill.org/api/projects/97/additional-files/additional_files.json
+  is_template_based: true
+  use_ide: true
+update_date: "Sat, 17 May 2025 15:23:30 UTC"
+stages:
+  - id: 534
+    step: 8799
+    is_completed: true
+  - id: 535
+    step: 8800
+    is_completed: true
+  - id: 536
+    step: 8801
+    is_completed: true
+  - id: 537
+    step: 8802
+    is_completed: true
+  - id: 538
+    step: 8803
+    is_completed: true
+topics:
+  0:
+    - title: Introduction to Python
+      theory_id: 5204
+    - title: Multi-line programs
+      theory_id: 5233
+  1:
+    - title: Taking user's input
+      theory_id: 5913
+    - title: Basic data types
+      theory_id: 5852
+    - title: Variables
+      theory_id: 5859
+    - title: "Integer arithmetic: basic operations"
+      theory_id: 5865
+  2:
+    - title: Program with numbers
+      theory_id: 5872
+  3:
+    - title: If statement
+      theory_id: 5953
+    - title: While loop
+      theory_id: 5940
+    - title: Boolean type and operations. True and false
+      theory_id: 6025
+    - title: Comparisons
+      theory_id: 5920
+  4:
+    - title: Else statement
+      theory_id: 5932
+    - title: Invoking functions
+      theory_id: 5891
+    - title: List
+      theory_id: 5979
+    - title: Indexes
+      theory_id: 6189
+    - title: Declaring functions
+      theory_id: 5900

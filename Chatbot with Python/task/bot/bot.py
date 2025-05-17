@@ -1,56 +1,119 @@
 def greet(bot_name, birth_year):
-    print('Hello! My name is ' + bot_name + '.')
-    print('I was created in ' + birth_year + '.')
+    """
+    Greets the user with the bot's name and birth year.
 
+    Args:
+        bot_name (str): The name of the bot.
+        birth_year (str): The year the bot was created.
+    """
+    print(f'Hello! My name is {bot_name}.')
+    print(f'I was created in {birth_year}.')
 
 def remind_name():
+    """
+    Prompts the user to input their name and responds with a compliment.
+    """
     print('Please, remind me your name.')
     name = input()
-    print('What a great name you have, ' + name + '!')
-
+    print('What a great name you have, {name}!')
+    return name
 
 def guess_age():
+    """
+    Asks the user for the remainders of their age when divided by 3, 5, and 7,
+    then uses the Chinese Remainder Theorem to guess their age.
+    """
     print('Let me guess your age.')
     print('Enter remainders of dividing your age by 3, 5 and 7.')
 
-    rem3 = int(input())
-    rem5 = int(input())
-    rem7 = int(input())
+    try:
+        rem3 = int(input())
+        rem5 = int(input())
+        rem7 = int(input())
+    except ValueError:
+        print("Please enter valid integers.")
+        return
+
     age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
 
     print("Your age is " + str(age) + "; that's a good time to start programming!")
 
+def programming_quiz():
+    """
+    Asks the user a series of multiple-choice programming questions.
+    Loops until all are answered correctly.
+    """
+    questions = [
+        {
+            "question": "Why do we use methods?",
+            "options": [
+                "1. To repeat a statement multiple times.",
+                "2. To decompose a program into several small subroutines.",
+                "3. To determine the execution time of a program.",
+                "4. To interrupt the execution of a program."
+            ],
+            "answer": 2
+        },
+        {
+            "question": "What is the output of: print(2 ** 3)?",
+            "options": [
+                "1. 6",
+                "2. 8",
+                "3. 9",
+                "4. 5"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Which data type is used to store True or False?",
+            "options": [
+                "1. int",
+                "2. str",
+                "3. bool",
+                "4. float"
+            ],
+            "answer": 3
+        }
+    ]
 
-def count():
-    print('Now I will prove to you that I can count to any number you want.')
+    score = 0
 
-    num = int(input())
-    curr = 0
-    while curr <= num:
-        print(curr, '!')
-        curr = curr + 1
+    for q in questions:
+        print("\n" + q["question"])
+        for option in q["options"]:
+            print(option)
 
+        while True:
+            try:
+                user_answer = int(input())
+                if user_answer == q["answer"]:
+                    print("Correct!")
+                    score += 1
+                    break
+                else:
+                    print("Please, try again.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
 
-def test():
-    print("Let's test your programming knowledge.")
-    print("Why do we use methods?")
-    print("1. To repeat a statement multiple times.")
-    print("2. To decompose a program into several small subroutines.")
-    print("3. To determine the execution time of a program.")
-    print("4. To interrupt the execution of a program.")
-    result = int(input())
-    if result == 2:
-        end()
-    else:
-        print("Please, try again.")
-        test()
+    print(f"\nYou answered all questions correctly! Final Score: {score}/{len(questions)}")
+    end()
 
 def end():
-    print('Congratulations, have a nice day!')
+    """
+    Prints a farewell message to the user.
+    """
+    print("Thank you for chatting with me 😊")
 
+def main():
+    """
+    Runs the main sequence of the bot interaction.
+    """
+    greet('Aid', '2020')
+    name = remind_name()
+    guess_age()
+    programming_quiz()
+    print(f"Goodbye, {name}!")
 
-greet('Aid', '2020')  # change it as you need
-remind_name()
-guess_age()
-count()
-test()
+if __name__ == "__main__":
+    main()
+

@@ -15,7 +15,7 @@ def remind_name():
     """
     print('Please, remind me your name.')
     name = input()
-    print('What a great name you have, {name}!')
+    print(f'What a great name you have, {name}!')
     return name
 
 def guess_age():
@@ -92,10 +92,12 @@ def programming_quiz():
                     break
                 else:
                     print("Please, try again.")
+                    if score > 0:
+                        score -= 1  # Decrement score safely
             except ValueError:
                 print("Invalid input. Please enter a number.")
 
-    print(f"\nYou answered all questions correctly! Final Score: {score}/{len(questions)}")
+    print(f"\nFinal Score: {score}/{len(questions)}")
     end()
 
 def end():
@@ -108,7 +110,7 @@ def main():
     """
     Runs the main sequence of the bot interaction.
     """
-    greet('Aid', '2020')
+    greet('PyAid', '2025')
     name = remind_name()
     guess_age()
     programming_quiz()

@@ -36,7 +36,7 @@ def guess_age():
 
     age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
 
-    print("Your age is " + str(age) + "; that's a good time to start programming!")
+    print(f"Your age is {age}; that's a good time to start programming!")
 
 def programming_quiz():
     """
